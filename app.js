@@ -25,7 +25,7 @@ app.use('/public', express.static('./backend/public/')); // Use custom JS and CS
 
 app.use(express.static(path.join(__dirname, 'backend/views')));
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8080;
 
 // app.use(bodyParser.json());
 
