@@ -61,4 +61,4 @@ jobs:
         app-name: 'erpportal'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_6c89718585d644e8a61d76030957e093 }}
-        package: .
+        package: ./app
