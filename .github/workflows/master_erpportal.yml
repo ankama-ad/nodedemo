@@ -26,15 +26,11 @@ jobs:
         npm install
         npm run build --if-present
         npm run test --if-present
-
-    - name: Zip files
-      run: zip -r erpportal.zip .
-
     - name: Upload artifact for deployment job
       uses: actions/upload-artifact@v2
       with:
         name: node-app
-        path: erpportal.zip
+        path: .
 
   deploy:
     runs-on: ubuntu-latest
@@ -56,4 +52,4 @@ jobs:
         app-name: 'erpportal'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_6c89718585d644e8a61d76030957e093 }}
-        package: erpportal.zip
+        package: . 
